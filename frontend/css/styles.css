@@ -789,6 +789,7 @@ body {
     height: calc(100vh - 120px);
   }
   .messages-container { padding: 1rem; gap: 1rem; }
+  .message-input-container { padding: 1rem; margin-bottom: 0; }
   .message-avatar { width: 38px; height: 38px; font-size: 0.9rem; }
   .message-text { padding: 12px 15px; font-size: 0.95rem; }
   .message-username { font-size: 0.85rem; }
