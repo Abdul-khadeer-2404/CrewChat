@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatRoom - Real-time Messaging</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-comments"></i>
+                <h1>ChatRoom</h1>
+            </div>
+            <p class="subtitle">Connect and chat in real-time</p>
+        </header>
+
+        <main class="main-content">
+            <div class="cards-container">
+                <!-- Join Room Card -->
+                <div class="card join-card">
+                    <h2>
+                        <i class="fas fa-sign-in-alt"></i>
+                        Join Room
+                    </h2>
+                    
+                    <form id="join-form">
+                        <div class="input-group">
+                            <label for="room-id">Room ID</label>
+                            <input type="text" id="room-id" placeholder="Enter room ID" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="username">Your Name</label>
+                            <input type="text" id="username" placeholder="Enter your name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-sign-in-alt"></i> Join Room
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Create Room Card -->
+                <div class="card create-card">
+                    <h2>
+                        <i class="fas fa-plus-circle"></i>
+                        Create Room
+                    </h2>
+                    
+                    <form id="create-form">
+                        <div class="input-group">
+                            <label for="room-name">Room Name</label>
+                            <input type="text" id="room-name" placeholder="Enter room name" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="creator-name">Your Name</label>
+                            <input type="text" id="creator-name" placeholder="Enter your name" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">
+                            <i class="fas fa-plus-circle"></i> Create Room
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Loading spinner -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Setting up your room...</p>
+            </div>
+
+            <!-- Error message -->
+            <div id="error-message" class="error-message hidden">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="error-text"></span>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 ChatRoom. Built with Socket.IO</p>
+        </footer>
+    </div>
+
+    <script src="js/join.js"></script>
+</body>
+</html>

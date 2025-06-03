@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatRoom - Room</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="room-page">
+    <!-- Header -->
+    <header class="room-header">
+        <div class="room-info">
+            <h1 id="room-name">Loading...</h1>
+            <span id="room-id" class="room-id"></span>
+        </div>
+        <div class="room-actions">
+            <button id="toggle-users" class="btn btn-outline">
+                <i class="fas fa-users"></i>
+                <span id="user-count">0</span>
+            </button>
+            <button id="leave-room" class="btn btn-danger">
+                <i class="fas fa-sign-out-alt"></i> Leave
+            </button>
+        </div>
+    </header>
+
+    <div class="chat-container">
+        <!-- Users sidebar -->
+        <aside id="users-sidebar" class="users-sidebar">
+            <div class="sidebar-header">
+                <h3><i class="fas fa-users"></i> Online Users</h3>
+                <button id="close-sidebar" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="users-list" class="users-list">
+                <!-- Users will be populated here -->
+            </div>
+        </aside>
+
+        <!-- Chat area -->
+        <main class="chat-main">
+            <div id="messages-container" class="messages-container">
+                <!-- Messages will be populated here -->
+            </div>
+
+            <!-- Typing indicator -->
+            <div id="typing-indicator" class="typing-indicator hidden">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span id="typing-text"></span>
+            </div>
+
+            <!-- Message input -->
+            <div class="message-input-container">
+                <div class="message-input-wrapper">
+                    <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off">
+                    <button id="send-button" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Private message modal -->
+    <div id="private-message-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Send Private Message</h3>
+                <button id="close-private-modal" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>To: <span id="private-recipient"></span></p>
+                <textarea id="private-message-input" placeholder="Type your private message..."></textarea>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-private" class="btn btn-outline">Cancel</button>
+                <button id="send-private" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Room deleted modal -->
+    <div id="room-deleted-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Room Deleted</h3>
+            </div>
+            <div class="modal-body">
+                <p>This room has been deleted by the creator.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="return-home" class="btn btn-primary">Return to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connection status -->
+    <div id="connection-status" class="connection-status hidden">
+        <i class="fas fa-wifi"></i>
+        <span>Reconnecting...</span>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+</html>
