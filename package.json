@@ -1,0 +1,13 @@
+{
+    "name": "chatroom-app",
+    "version": "1.0.0",
+    "description": "Real-time chatroom application",
+    "scripts": {
+      "start": "cd backend && npm start",
+      "install": "cd backend && npm install",
+      "dev": "cd backend && npm run dev"
+    },
+    "engines": {
+      "node": "18.x"
+    }
+  }
