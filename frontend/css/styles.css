@@ -179,14 +179,14 @@ body {
 }
 
 .btn-danger {
-  background: #E3D095;
-  color: #0E2148;
-  box-shadow: 0 8px 16px rgba(227, 208, 149, 0.3);
+  background: #e53935;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(229, 57, 53, 0.2);
 }
 
 .btn-danger:hover { 
-  background: #d9c575;
-  box-shadow: 0 12px 24px rgba(227, 208, 149, 0.4); 
+  background: #b71c1c;
+  box-shadow: 0 12px 24px rgba(229, 57, 53, 0.3); 
 }
 
 .btn-outline {
